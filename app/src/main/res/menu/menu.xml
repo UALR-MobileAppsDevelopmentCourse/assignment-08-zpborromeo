@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/delete_action"
+        app:showAsAction="always"
+        android:title="@string/delete_text"
+        android:icon="@drawable/trashcan"
+        android:iconTint="@color/grey_50"
+        />
+    <item
+        android:id="@+id/forward_action"
+        app:showAsAction="never"
+        android:title="@string/forward"/>
+</menu>

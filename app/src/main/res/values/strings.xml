@@ -1,13 +1,19 @@
 <resources>
-    <string name="app_name">LayoutAssignment</string>
-    <string name="scan_chip">Scan</string>
-    <string name="top_up_chip">Top Up</string>
-    <string name="send_chip">Send</string>
-    <string name="pulsa_amp_data"><![CDATA[Pulsa & Data]]></string>
-    <string name="bonus_pulsa_50">Bonus pulsa 50%</string>
-    <string name="buy_now">BUY NOW</string>
-    <string name="invoice">INVOICE</string>
-    <string name="calculate_total_btn">calculate total</string>
-    <string name="_00_00">00.00</string>
-    <string name="dollar_symbol">$</string>
+    <string name="app_name">RecyclerViewAssignment</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
+        \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur ipsum in placerat molestie.  Fusce quis mauris a enim sollicitudin
+    </string>
+    <string name="forward_btn_text">Send</string>
+    <string name="send_to_email_hint">email@email.com</string>
+    <string name="send_to_name">First Name Last Name</string>
+    <string name="forward_message">Forward Message</string>
+    <string name="email_text">Email:</string>
+    <string name="name_text">Name:</string>
+    <string name="message_text">Message:</string>
+    <string name="delete_text">Delete</string>
+    <string name="email_deleted">Email has been deleted.</string>
+    <string name="email_forwarded">Email has been forwarded.</string>
+    <string name="forward">Forward</string>
+
 </resources>

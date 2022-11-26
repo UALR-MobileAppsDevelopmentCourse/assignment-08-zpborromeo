@@ -26,7 +26,4 @@
     <dimen name="spacing_xxxlarge">55dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
 
-    <dimen name="card_corner_radius">4dp</dimen>
-    <dimen name="card_elevation">4dp</dimen>
-
 </resources>

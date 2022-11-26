@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inboxLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/spacing_middle"
+    android:paddingBottom="@dimen/spacing_middle">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvIcon"
+            android:layout_width="@dimen/spacing_xmlarge"
+            android:layout_height="@dimen/spacing_xmlarge"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:background="@drawable/shape_circle"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/spacing_mlarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_middle"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/emailSender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_middle"
+                    android:layout_weight="1"
+                    android:text="email sender name"
+                    android:textSize="@dimen/spacing_smlarge"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/emailTimeSent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_middle"
+                    android:text="date time"
+                    android:textSize="@dimen/spacing_large"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/emailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_middle"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="email title"
+                android:textSize="@dimen/spacing_large"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emailContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_middle"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:textSize="@dimen/spacing_large"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/lorem_ipsum" />
+        </LinearLayout>
+</LinearLayout>
