@@ -100,11 +100,11 @@ public class AdapterListBasic extends RecyclerView.Adapter{
         vh.mailTimeSent.setText(mInbox.get(position).getDate());
 
         int mailSelectedColor = mContext.getResources().getColor(R.color.grey_20);
-        int iconSelectedColor = mContext.getResources().getColor(R.color.colorAccent);
+        int iconSelectedColor = mContext.getResources().getColor(R.color.colorAccentLight);
         int iconDefaultColor = mContext.getResources().getColor(R.color.colorPrimary);
 
         Drawable defaultIcon = mContext.getDrawable(R.drawable.shape_circle);
-        Drawable deleteIcon = mContext.getDrawable(R.drawable.ic_delete_24px);
+        Drawable checkmarkIcon = mContext.getDrawable(R.drawable.checkmark);
         Drawable selectedIcon = mContext.getDrawable(R.drawable.shape_circle);
         selectedIcon.setBounds(0, 0, 24, 24);
         defaultIcon.mutate().setColorFilter(iconDefaultColor, PorterDuff.Mode.SRC_IN);
@@ -115,7 +115,7 @@ public class AdapterListBasic extends RecyclerView.Adapter{
         if (mainInbox.isSelected()){
             vh.mainInboxView.setBackgroundColor(mailSelectedColor);
             vh.mailIcon.setBackground(selectedIcon);
-            vh.mailIcon.setCompoundDrawablesRelativeWithIntrinsicBounds(deleteIcon, null, null, null);
+            vh.mailIcon.setCompoundDrawablesRelativeWithIntrinsicBounds(checkmarkIcon, null, null, null);
         }else{
             vh.mainInboxView.setBackgroundColor(Color.TRANSPARENT);
             vh.mailIcon.setBackground(defaultIcon);
