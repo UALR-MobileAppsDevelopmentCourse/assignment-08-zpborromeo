@@ -43,6 +43,7 @@ public class AdapterListBasic extends RecyclerView.Adapter{
         this.selectedInboxItem = selectedInboxItem;
     }
 
+    //added updateInbox function to update the display and an item is added
     public void updateInbox(List<Inbox> inboxList) {
         this.mInbox = inboxList;
         notifyDataSetChanged();
@@ -103,6 +104,7 @@ public class AdapterListBasic extends RecyclerView.Adapter{
         int iconSelectedColor = mContext.getResources().getColor(R.color.colorAccentLight);
         int iconDefaultColor = mContext.getResources().getColor(R.color.colorPrimary);
 
+        //changed drawn icon to a checkmark
         Drawable defaultIcon = mContext.getDrawable(R.drawable.shape_circle);
         Drawable checkmarkIcon = mContext.getDrawable(R.drawable.checkmark);
         Drawable selectedIcon = mContext.getDrawable(R.drawable.shape_circle);

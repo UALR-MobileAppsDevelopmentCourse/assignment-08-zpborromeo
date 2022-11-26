@@ -16,6 +16,8 @@ import com.ualr.recyclerviewassignment.R;
 import com.ualr.recyclerviewassignment.model.Inbox;
 import com.ualr.recyclerviewassignment.model.InboxViewModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -37,6 +39,8 @@ public class ForwardFragment extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //styling fragment to make everything appear
+        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.Theme_AppCompat_DayNight_Dialog_MinWidth);
         mainViewModel = new ViewModelProvider(getActivity()).get(InboxViewModel.class);
     }
 
@@ -46,6 +50,7 @@ public class ForwardFragment extends DialogFragment {
         return inflater.inflate(R.layout.forward_fragment, container, false);
     }
 
+    //remove dialog box after some period of time
     public void dismissDialog() {
         this.dismiss();
     }
@@ -53,6 +58,11 @@ public class ForwardFragment extends DialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstancedState){
         super.onViewCreated(view, savedInstancedState);
+
+        //implementing SDF to show new forwarded date on email
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+        Calendar c = Calendar.getInstance();
+        String todayDate = sdf.format(c.getTime());
 
         final int selectedItemIndex = getArguments().getInt(SELECTED_KEY);
         final Inbox selectedInboxItem = mainViewModel.getInboxList().getValue().get(selectedItemIndex);
@@ -69,12 +79,13 @@ public class ForwardFragment extends DialogFragment {
         forwardButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                //on click of the Send Button, we want to make a new inbox item and add it to the inbox
                 String itemSender = forwardNameTF.getText().toString();
                 String itemEmail = forwardEmailTF.getText().toString();
-                String itemMessage = forwardMessageTF.getText().toString();
+                String itemMessage = "Forwarded: " + forwardMessageTF.getText().toString();
 
                 Inbox updatedInbox = new Inbox();
-                updatedInbox.setEmailData(itemSender, itemEmail, itemMessage, selectedInboxItem.getDate(), false);
+                updatedInbox.setEmailData(itemSender, itemEmail, itemMessage, todayDate, false);
 
                 List<Inbox> curEmails = mainViewModel.getInboxList().getValue();
                 curEmails.set(selectedItemIndex, updatedInbox);

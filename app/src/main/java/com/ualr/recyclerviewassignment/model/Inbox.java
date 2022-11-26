@@ -55,6 +55,7 @@ public class Inbox {
         this.selected = !this.selected;
     }
 
+    //added setEmailData function - similar to a constructor, but with an existing email
     public void setEmailData(String from, String email, String message, String date, boolean selected) {
         this.from = from;
         this.email = email;
